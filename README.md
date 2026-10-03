@@ -1,3 +1,4 @@
+AI-Prompt
 # AI-Interface-Collection
 A collection of modern AI interface UI templates built using HTML, CSS and JavaScript.
 # AI Recommendation Interface
@@ -106,3 +107,4 @@ AI Interface Collection project.
 Workflow:
 
 Fork → Clone → Branch → Develop → Commit → Push → Pull Request → Review → Merge
+main

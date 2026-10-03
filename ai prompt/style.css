@@ -1,0 +1,428 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #f6f7fb;
+    --card: #ffffff;
+    --text: #171923;
+    --secondary: #6b7280;
+    --border: #e5e7eb;
+    --primary: #6c5ce7;
+    --primary-dark: #5847d4;
+    --input: #fafafa;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+
+/* Header */
+
+.header {
+    height: 70px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: var(--primary);
+    color: white;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-btn,
+.profile-btn {
+    border: 1px solid var(--border);
+    background: var(--card);
+    cursor: pointer;
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.profile-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    font-weight: bold;
+}
+
+
+/* Main */
+
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: auto;
+    padding: 55px 0;
+}
+
+
+/* Introduction */
+
+.intro {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.welcome {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.intro h1 {
+    font-size: 42px;
+    margin-bottom: 14px;
+}
+
+.intro h1 span {
+    color: var(--primary);
+}
+
+.description {
+    color: var(--secondary);
+    font-size: 16px;
+}
+
+
+/* Prompt Card */
+
+.prompt-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.card-header h2 {
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.card-header p {
+    color: var(--secondary);
+    font-size: 14px;
+}
+
+.clear-btn {
+    background: transparent;
+    border: none;
+    color: var(--secondary);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.clear-btn:hover {
+    color: var(--primary);
+}
+
+
+/* Textarea */
+
+textarea {
+    width: 100%;
+    min-height: 170px;
+    resize: vertical;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 18px;
+    font-size: 15px;
+    font-family: inherit;
+    background: var(--input);
+    outline: none;
+}
+
+textarea:focus {
+    border-color: var(--primary);
+}
+
+
+/* Options */
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.option label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--card);
+    cursor: pointer;
+}
+
+
+/* Generate */
+
+.generate-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.generate-btn:hover {
+    background: var(--primary-dark);
+}
+
+
+/* Suggestions */
+
+.suggestions {
+    margin-top: 35px;
+}
+
+.suggestions h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.suggestion-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.suggestion {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 17px;
+    text-align: left;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    cursor: pointer;
+}
+
+.suggestion:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.suggestion span {
+    font-size: 20px;
+}
+
+.suggestion strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.suggestion small {
+    color: var(--secondary);
+}
+
+
+/* Response */
+
+.response-card {
+    margin-top: 35px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.response-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--border);
+}
+
+.ai-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ai-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ai-title h2 {
+    font-size: 17px;
+}
+
+.ai-title span {
+    color: var(--secondary);
+    font-size: 12px;
+}
+
+.copy-btn {
+    border: 1px solid var(--border);
+    background: var(--card);
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.copy-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.response-content {
+    padding: 30px;
+    min-height: 180px;
+}
+
+.empty-response {
+    text-align: center;
+    color: var(--secondary);
+}
+
+.empty-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: #f0edff;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+}
+
+.empty-response h3 {
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: var(--secondary);
+    font-size: 13px;
+}
+
+
+/* Dark Mode */
+
+body.dark {
+    --background: #111218;
+    --card: #1a1b23;
+    --text: #f5f5f5;
+    --secondary: #a5a7b0;
+    --border: #30313b;
+    --input: #15161d;
+}
+
+
+/* Responsive */
+
+@media (max-width: 800px) {
+
+    .intro h1 {
+        font-size: 32px;
+    }
+
+    .options {
+        grid-template-columns: 1fr;
+    }
+
+    .suggestion-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .header {
+        padding: 0 5%;
+    }
+
+    .container {
+        width: 94%;
+        padding: 35px 0;
+    }
+
+    .intro h1 {
+        font-size: 27px;
+    }
+
+    .suggestion-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .prompt-card {
+        padding: 18px;
+    }
+}
