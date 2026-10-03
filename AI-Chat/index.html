@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span>✦</span> AI Chat
+            </div>
+
+            <button class="new-chat" id="newChat">
+                + New Chat
+            </button>
+
+            <div class="chat-history">
+                <p class="history-title">Recent Chats</p>
+
+                <div class="history-item">
+                    <span>💬</span>
+                    Learning Python
+                </div>
+
+                <div class="history-item">
+                    <span>💬</span>
+                    Project Ideas
+                </div>
+
+                <div class="history-item">
+                    <span>💬</span>
+                    Data Structures
+                </div>
+            </div>
+
+            <div class="sidebar-bottom">
+                <button id="themeToggle">🌙 Change Theme</button>
+            </div>
+        </aside>
+
+
+        <!-- Main Chat Area -->
+        <main class="chat-container">
+
+            <!-- Header -->
+            <header class="chat-header">
+                <div class="ai-info">
+                    <div class="ai-avatar">✦</div>
+
+                    <div>
+                        <h2>AI Assistant</h2>
+                        <p><span class="status-dot"></span> Online</p>
+                    </div>
+                </div>
+
+                <button class="menu-btn">⋮</button>
+            </header>
+
+
+            <!-- Messages -->
+            <section class="messages" id="messages">
+
+                <div class="welcome">
+                    <div class="welcome-icon">✦</div>
+
+                    <h1>How can I help you?</h1>
+
+                    <p>
+                        Ask me anything or choose a suggestion below.
+                    </p>
+                </div>
+
+                <div class="suggestions">
+                    <button class="suggestion">
+                        💡 Explain a concept
+                    </button>
+
+                    <button class="suggestion">
+                        💻 Help me code
+                    </button>
+
+                    <button class="suggestion">
+                        📝 Write something
+                    </button>
+
+                    <button class="suggestion">
+                        🎓 Help me study
+                    </button>
+                </div>
+
+            </section>
+
+
+            <!-- Input Area -->
+            <div class="input-area">
+
+                <div class="input-box">
+
+                    <textarea
+                        id="messageInput"
+                        placeholder="Message AI Assistant..."
+                        rows="1"
+                    ></textarea>
+
+                    <button id="sendButton" class="send-btn">
+                        ➤
+                    </button>
+
+                </div>
+
+                <p class="disclaimer">
+                    AI can make mistakes. Check important information.
+                </p>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
