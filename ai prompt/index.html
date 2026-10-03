@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt Interface</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">✦</span>
+            <span>PromptAI</span>
+        </div>
+
+        <div class="header-actions">
+            <button id="themeBtn" class="icon-btn">☀</button>
+            <button class="profile-btn">R</button>
+        </div>
+    </header>
+
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Introduction -->
+        <section class="intro">
+            <p class="welcome">AI PROMPT WORKSPACE</p>
+            <h1>What can I help you <span>create?</span></h1>
+            <p class="description">
+                Write a prompt, choose your preferences, and generate an AI response.
+            </p>
+        </section>
+
+
+        <!-- Prompt Box -->
+        <section class="prompt-card">
+
+            <div class="card-header">
+                <div>
+                    <h2>Enter your prompt</h2>
+                    <p>Describe what you want the AI to do.</p>
+                </div>
+
+                <button id="clearBtn" class="clear-btn">
+                    Clear
+                </button>
+            </div>
+
+
+            <textarea
+                id="promptInput"
+                placeholder="Example: Explain artificial intelligence in simple words..."
+            ></textarea>
+
+
+            <!-- Prompt Options -->
+            <div class="options">
+
+                <div class="option">
+                    <label for="model">Model</label>
+
+                    <select id="model">
+                        <option>Smart AI</option>
+                        <option>Creative AI</option>
+                        <option>Fast AI</option>
+                    </select>
+                </div>
+
+
+                <div class="option">
+                    <label for="tone">Tone</label>
+
+                    <select id="tone">
+                        <option>Professional</option>
+                        <option>Friendly</option>
+                        <option>Simple</option>
+                        <option>Creative</option>
+                    </select>
+                </div>
+
+
+                <div class="option">
+                    <label for="length">Response</label>
+
+                    <select id="length">
+                        <option>Short</option>
+                        <option>Medium</option>
+                        <option>Detailed</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <!-- Generate Button -->
+            <button id="generateBtn" class="generate-btn">
+                ✦ Generate Response
+            </button>
+
+        </section>
+
+
+        <!-- Suggestions -->
+        <section class="suggestions">
+
+            <h3>Try a prompt</h3>
+
+            <div class="suggestion-grid">
+
+                <button class="suggestion">
+                    <span>📝</span>
+                    <div>
+                        <strong>Summarize</strong>
+                        <small>Summarize a long document</small>
+                    </div>
+                </button>
+
+                <button class="suggestion">
+                    <span>💡</span>
+                    <div>
+                        <strong>Generate Ideas</strong>
+                        <small>Generate creative ideas</small>
+                    </div>
+                </button>
+
+                <button class="suggestion">
+                    <span>💻</span>
+                    <div>
+                        <strong>Write Code</strong>
+                        <small>Create a programming solution</small>
+                    </div>
+                </button>
+
+                <button class="suggestion">
+                    <span>📚</span>
+                    <div>
+                        <strong>Explain</strong>
+                        <small>Explain a difficult topic</small>
+                    </div>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- AI Response -->
+        <section class="response-card" id="responseCard">
+
+            <div class="response-header">
+                <div class="ai-title">
+                    <div class="ai-icon">✦</div>
+
+                    <div>
+                        <h2>AI Response</h2>
+                        <span id="responseStatus">Ready</span>
+                    </div>
+                </div>
+
+                <button id="copyBtn" class="copy-btn">
+                    Copy
+                </button>
+            </div>
+
+
+            <div id="responseContent" class="response-content">
+
+                <div class="empty-response">
+                    <div class="empty-icon">✦</div>
+
+                    <h3>Your response will appear here</h3>
+
+                    <p>
+                        Enter a prompt above and click
+                        <strong>Generate Response</strong>.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>AI Prompt Interface • Built with HTML, CSS & JavaScript</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
