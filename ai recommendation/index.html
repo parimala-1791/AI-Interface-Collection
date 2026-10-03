@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Recommendation Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon">✦</span>
+            <span>NovaAI</span>
+        </div>
+
+        <nav>
+            <a href="#recommendations">Recommendations</a>
+            <a href="#insights">AI Insights</a>
+            <a href="#saved">Saved</a>
+        </nav>
+
+        <button class="profile-btn">B</button>
+    </header>
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-text">
+                <div class="ai-label">✦ AI POWERED</div>
+
+                <h1>Recommendations<br>
+                    <span>made for you.</span>
+                </h1>
+
+                <p>
+                    Discover personalized suggestions powered by AI.
+                    We analyze your interests and activity to find things
+                    you may love.
+                </p>
+
+                <button class="refresh-btn" onclick="refreshRecommendations()">
+                    ↻ Refresh recommendations
+                </button>
+            </div>
+
+            <div class="ai-orb">
+                <div class="orb-inner">✦</div>
+            </div>
+        </section>
+
+
+        <!-- Stats -->
+        <section class="stats">
+            <div class="stat-card">
+                <span class="stat-icon">✦</span>
+                <div>
+                    <strong>94%</strong>
+                    <p>Match accuracy</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">◈</span>
+                <div>
+                    <strong>128</strong>
+                    <p>Recommendations</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">♡</span>
+                <div>
+                    <strong>36</strong>
+                    <p>Saved items</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Recommendations -->
+        <section id="recommendations" class="recommendation-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="small-title">PERSONALIZED FOR YOU</p>
+                    <h2>AI Recommendations</h2>
+                </div>
+
+                <div class="filters">
+                    <button class="filter active" onclick="filterItems('all', this)">
+                        All
+                    </button>
+
+                    <button class="filter" onclick="filterItems('technology', this)">
+                        Technology
+                    </button>
+
+                    <button class="filter" onclick="filterItems('design', this)">
+                        Design
+                    </button>
+
+                    <button class="filter" onclick="filterItems('business', this)">
+                        Business
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="recommendation-grid" id="recommendationGrid">
+
+                <!-- Card 1 -->
+                <article class="recommendation-card" data-category="technology">
+
+                    <div class="card-image tech-image">
+                        <span>AI</span>
+                        <button class="save-btn" onclick="saveItem(this)">♡</button>
+                    </div>
+
+                    <div class="card-content">
+
+                        <div class="tag">TECHNOLOGY</div>
+
+                        <h3>Introduction to Generative AI</h3>
+
+                        <p>
+                            Learn how modern AI models generate text,
+                            images and intelligent responses.
+                        </p>
+
+                        <div class="reason">
+                            <span>✦</span>
+                            <div>
+                                <strong>Why we recommend this</strong>
+                                <p>
+                                    You recently explored AI and machine
+                                    learning topics.
+                                </p>
+                            </div>
+                        </div>
+
+                        <button class="explore-btn" onclick="exploreItem('Generative AI')">
+                            Explore
+                            <span>→</span>
+                        </button>
+
+                    </div>
+                </article>
+
+
+                <!-- Card 2 -->
+                <article class="recommendation-card" data-category="design">
+
+                    <div class="card-image design-image">
+                        <span>UI</span>
+                        <button class="save-btn" onclick="saveItem(this)">♡</button>
+                    </div>
+
+                    <div class="card-content">
+
+                        <div class="tag">DESIGN</div>
+
+                        <h3>Modern AI Interface Design</h3>
+
+                        <p>
+                            Explore emerging design patterns for
+                            intelligent user interfaces.
+                        </p>
+
+                        <div class="reason">
+                            <span>✦</span>
+                            <div>
+                                <strong>Why we recommend this</strong>
+                                <p>
+                                    Your recent activity shows interest
+                                    in modern UI design.
+                                </p>
+                            </div>
+                        </div>
+
+                        <button class="explore-btn" onclick="exploreItem('AI Interface Design')">
+                            Explore
+                            <span>→</span>
+                        </button>
+
+                    </div>
+                </article>
+
+
+                <!-- Card 3 -->
+                <article class="recommendation-card" data-category="business">
+
+                    <div class="card-image business-image">
+                        <span>DATA</span>
+                        <button class="save-btn" onclick="saveItem(this)">♡</button>
+                    </div>
+
+                    <div class="card-content">
+
+                        <div class="tag">BUSINESS</div>
+
+                        <h3>AI for Business Analytics</h3>
+
+                        <p>
+                            Discover how AI can transform business
+                            data into useful insights.
+                        </p>
+
+                        <div class="reason">
+                            <span>✦</span>
+                            <div>
+                                <strong>Why we recommend this</strong>
+                                <p>
+                                    Similar users interested in analytics
+                                    found this useful.
+                                </p>
+                            </div>
+                        </div>
+
+                        <button class="explore-btn" onclick="exploreItem('AI Business Analytics')">
+                            Explore
+                            <span>→</span>
+                        </button>
+
+                    </div>
+                </article>
+
+
+                <!-- Card 4 -->
+                <article class="recommendation-card" data-category="technology">
+
+                    <div class="card-image coding-image">
+                        <span>CODE</span>
+                        <button class="save-btn" onclick="saveItem(this)">♡</button>
+                    </div>
+
+                    <div class="card-content">
+
+                        <div class="tag">TECHNOLOGY</div>
+
+                        <h3>Build Your First AI Assistant</h3>
+
+                        <p>
+                            Learn the basic concepts behind building
+                            an intelligent AI assistant.
+                        </p>
+
+                        <div class="reason">
+                            <span>✦</span>
+                            <div>
+                                <strong>Why we recommend this</strong>
+                                <p>
+                                    It matches your recent interest
+                                    in AI applications.
+                                </p>
+                            </div>
+                        </div>
+
+                        <button class="explore-btn" onclick="exploreItem('AI Assistant')">
+                            Explore
+                            <span>→</span>
+                        </button>
+
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- AI Insight -->
+        <section id="insights" class="insight-section">
+
+            <div class="insight-icon">✦</div>
+
+            <div>
+                <p class="small-title">AI INSIGHT</p>
+
+                <h2>
+                    Your interests are evolving.
+                </h2>
+
+                <p>
+                    Based on your recent activity, you are exploring
+                    more AI and design content. We've adjusted your
+                    recommendations accordingly.
+                </p>
+            </div>
+
+            <button onclick="showInsight()">
+                View insight →
+            </button>
+
+        </section>
+
+
+        <!-- Saved -->
+        <section id="saved" class="saved-section">
+
+            <p class="small-title">YOUR COLLECTION</p>
+
+            <h2>Saved Recommendations</h2>
+
+            <p id="savedMessage">
+                You haven't saved any recommendations yet.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>✦ NovaAI Recommendation Interface</p>
+        <p>AI-powered personalized discovery</p>
+    </footer>
+
+
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
