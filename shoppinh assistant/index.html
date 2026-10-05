@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopAI - Shopping Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span>✦</span> ShopAI
+            </div>
+
+            <button class="new-chat" onclick="newChat()">+ New Shopping Chat</button>
+
+            <div class="menu">
+                <p class="menu-title">DISCOVER</p>
+                <button onclick="showCategory('Recommended')">✨ Recommended</button>
+                <button onclick="showCategory('Deals')">🔥 Today's Deals</button>
+                <button onclick="showCategory('Trending')">📈 Trending</button>
+                <button onclick="showCategory('Wishlist')">♡ Wishlist</button>
+
+                <p class="menu-title">SHOPPING</p>
+                <button onclick="showCategory('Electronics')">💻 Electronics</button>
+                <button onclick="showCategory('Fashion')">👕 Fashion</button>
+                <button onclick="showCategory('Home')">🏠 Home & Living</button>
+            </div>
+
+            <div class="sidebar-bottom">
+                <button>⚙ Settings</button>
+                <button>❓ Help</button>
+            </div>
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main">
+
+            <!-- Header -->
+            <header class="header">
+                <div>
+                    <h2>Shopping Assistant</h2>
+                    <p>AI-powered product discovery</p>
+                </div>
+
+                <div class="header-actions">
+                    <button class="icon-btn">🔔</button>
+                    <div class="avatar">B</div>
+                </div>
+            </header>
+
+
+            <!-- Hero -->
+            <section class="hero">
+                <div class="hero-icon">✦</div>
+
+                <h1>What are you shopping for?</h1>
+
+                <p>
+                    Tell me what you need, your budget, or what you're looking for.
+                    I'll help you find the right products.
+                </p>
+
+                <!-- Search -->
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Ask me anything... e.g. Find a laptop under ₹50,000"
+                        onkeypress="handleEnter(event)"
+                    >
+                    <button onclick="sendMessage()">➤</button>
+                </div>
+
+                <!-- Suggestions -->
+                <div class="suggestions">
+                    <button onclick="quickSearch('Find a laptop under ₹50,000')">
+                        💻 Find a laptop
+                    </button>
+
+                    <button onclick="quickSearch('Compare smartphones')">
+                        📱 Compare phones
+                    </button>
+
+                    <button onclick="quickSearch('Suggest a gift')">
+                        🎁 Gift ideas
+                    </button>
+
+                    <button onclick="quickSearch('Find the best deals')">
+                        🔥 Best deals
+                    </button>
+                </div>
+            </section>
+
+
+            <!-- Chat Response -->
+            <section class="chat-section" id="chatSection">
+
+                <div class="ai-message">
+                    <div class="ai-avatar">✦</div>
+
+                    <div class="message-content">
+                        <strong>ShopAI</strong>
+
+                        <p>
+                            Hi! I'm your AI shopping assistant. Tell me what you're
+                            looking for and I'll help you discover the best options.
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- Recommendations -->
+            <section class="recommendations">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Recommended for you</h2>
+                        <p>Based on popular choices and customer ratings</p>
+                    </div>
+
+                    <button class="view-all">View all →</button>
+                </div>
+
+
+                <div class="products">
+
+                    <!-- Product 1 -->
+                    <div class="product-card">
+
+                        <div class="product-image laptop">
+                            💻
+                        </div>
+
+                        <span class="badge">AI Pick</span>
+
+                        <h3>ProBook Air 14</h3>
+
+                        <p class="description">
+                            Lightweight laptop for study and productivity.
+                        </p>
+
+                        <div class="rating">
+                            ⭐ 4.7 <span>(328 reviews)</span>
+                        </div>
+
+                        <div class="product-bottom">
+                            <strong>₹48,999</strong>
+                            <button onclick="addToCart('ProBook Air 14')">
+                                Add to cart
+                            </button>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Product 2 -->
+                    <div class="product-card">
+
+                        <div class="product-image phone">
+                            📱
+                        </div>
+
+                        <span class="badge">Popular</span>
+
+                        <h3>PixelMax X5</h3>
+
+                        <p class="description">
+                            Powerful smartphone with an excellent camera.
+                        </p>
+
+                        <div class="rating">
+                            ⭐ 4.6 <span>(512 reviews)</span>
+                        </div>
+
+                        <div class="product-bottom">
+                            <strong>₹34,999</strong>
+                            <button onclick="addToCart('PixelMax X5')">
+                                Add to cart
+                            </button>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Product 3 -->
+                    <div class="product-card">
+
+                        <div class="product-image headphones">
+                            🎧
+                        </div>
+
+                        <span class="badge">Best Value</span>
+
+                        <h3>SoundWave Pro</h3>
+
+                        <p class="description">
+                            Wireless headphones with immersive sound.
+                        </p>
+
+                        <div class="rating">
+                            ⭐ 4.8 <span>(746 reviews)</span>
+                        </div>
+
+                        <div class="product-bottom">
+                            <strong>₹7,499</strong>
+                            <button onclick="addToCart('SoundWave Pro')">
+                                Add to cart
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- AI Insight -->
+            <section class="insight">
+
+                <div class="insight-icon">✦</div>
+
+                <div>
+                    <h3>AI Shopping Insight</h3>
+
+                    <p>
+                        Products with ratings above 4.5 and more than 300 reviews
+                        are currently getting the highest customer satisfaction.
+                    </p>
+                </div>
+
+                <button>Learn more →</button>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
