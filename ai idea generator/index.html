@@ -1,0 +1,146 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Idea Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">AI<span>GEN</span></div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Ideas</a>
+            <a href="#">About</a>
+        </nav>
+
+        <button class="theme-btn" id="themeBtn">☾</button>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="badge">✦ AI POWERED IDEA GENERATOR</div>
+
+            <h1>
+                Turn your thoughts into
+                <span>great ideas.</span>
+            </h1>
+
+            <p>
+                Enter a topic and let AI-inspired suggestions help you
+                discover creative ideas for your next project.
+            </p>
+        </section>
+
+        <section class="generator">
+
+            <div class="generator-card">
+
+                <div class="card-title">
+                    <div class="title-icon">✦</div>
+
+                    <div>
+                        <h2>Generate Ideas</h2>
+                        <p>Tell us what you are thinking about.</p>
+                    </div>
+                </div>
+
+                <label for="topic">What do you need ideas for?</label>
+
+                <textarea
+                    id="topic"
+                    placeholder="Example: A mobile app for college students..."
+                ></textarea>
+
+                <div class="options">
+
+                    <div class="option">
+                        <label for="category">Category</label>
+
+                        <select id="category">
+                            <option value="Startup">Startup</option>
+                            <option value="Website">Website</option>
+                            <option value="Mobile App">Mobile App</option>
+                            <option value="Education">Education</option>
+                            <option value="AI">AI</option>
+                            <option value="Social Media">Social Media</option>
+                        </select>
+                    </div>
+
+                    <div class="option">
+                        <label for="style">Idea Style</label>
+
+                        <select id="style">
+                            <option value="Creative">Creative</option>
+                            <option value="Simple">Simple</option>
+                            <option value="Innovative">Innovative</option>
+                            <option value="Practical">Practical</option>
+                        </select>
+                    </div>
+
+                    <div class="option">
+                        <label for="count">Number of Ideas</label>
+
+                        <select id="count">
+                            <option value="3">3 Ideas</option>
+                            <option value="5" selected>5 Ideas</option>
+                            <option value="7">7 Ideas</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <button class="generate-btn" id="generateBtn">
+                    ✦ Generate Ideas
+                </button>
+
+            </div>
+
+        </section>
+
+        <section class="results" id="resultsSection">
+
+            <div class="results-heading">
+                <div>
+                    <p class="small-title">AI SUGGESTIONS</p>
+                    <h2>Your Ideas</h2>
+                </div>
+
+                <button id="clearBtn" class="clear-btn">
+                    Clear
+                </button>
+            </div>
+
+            <div id="ideasContainer" class="ideas-container">
+
+                <div class="empty-state">
+                    <div class="empty-icon">✦</div>
+                    <h3>Your ideas will appear here</h3>
+                    <p>
+                        Enter a topic above and click
+                        "Generate Ideas" to get started.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>AI Idea Generator © 2026</p>
+        <p>Built with HTML • CSS • JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
