@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>AI Interface Collection</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- ================= NAVIGATION ================= -->
+
+    <header class="navbar">
+
         <div class="logo">
             AI<span>Interface</span>
         </div>
 
-        <div class="nav-links">
+        <nav class="nav-links">
             <a href="#home">Home</a>
             <a href="#interfaces">Interfaces</a>
             <a href="#about">About</a>
-        </div>
-    </nav>
+        </nav>
+
+    </header>
 
 
-    <!-- Hero Section -->
+    <!-- ================= HERO ================= -->
+
     <section class="hero" id="home">
 
         <div class="hero-content">
@@ -33,13 +38,13 @@
             <p class="tag">AI INTERFACE COLLECTION</p>
 
             <h1>
-                Explore the Future of
-                <span>AI Interfaces</span>
+                Explore the
+                <span>Future of AI</span>
             </h1>
 
-            <p class="hero-text">
+            <p class="hero-description">
                 A collection of modern and interactive AI interfaces
-                built using HTML, CSS and JavaScript.
+                created using HTML, CSS and JavaScript.
             </p>
 
             <a href="#interfaces" class="hero-button">
@@ -48,157 +53,244 @@
 
         </div>
 
-        <div class="hero-card">
 
-            <div class="ai-circle">
+        <div class="hero-visual">
+
+            <div class="ai-orb">
                 AI
             </div>
 
-            <h3>Intelligent. Interactive. Modern.</h3>
+            <div class="floating-card card-one">
+                💬 AI Chat
+            </div>
 
-            <p>
-                Discover different ways users can interact
-                with artificial intelligence.
-            </p>
+            <div class="floating-card card-two">
+                🔍 AI Search
+            </div>
+
+            <div class="floating-card card-three">
+                ✨ AI Prompt
+            </div>
 
         </div>
 
     </section>
 
 
-    <!-- Interfaces Section -->
+    <!-- ================= INTERFACES ================= -->
+
     <section class="interfaces" id="interfaces">
 
         <div class="section-heading">
+
             <p class="tag">OUR COLLECTION</p>
 
             <h2>AI Interfaces</h2>
 
             <p>
-                Explore the interfaces created by our team.
+                Explore the different AI experiences created by our team.
             </p>
+
         </div>
 
 
         <div class="cards">
 
-            <!-- AI Chat -->
-            <div class="card">
 
-                <div class="card-icon">💬</div>
+            <!-- ================= AI CHAT ================= -->
 
-                <span class="number">01</span>
+            <article class="project-card">
 
-                <h3>AI Chat</h3>
+                <div class="card-top">
 
-                <p>
-                    A modern conversational AI interface
-                    where users can interact through messages.
-                </p>
+                    <div class="icon">
+                        💬
+                    </div>
 
-                <a href="AI-Chat/index.html">
-                    Open Interface →
-                </a>
+                    <span class="number">
+                        01
+                    </span>
 
-            </div>
+                </div>
 
-
-            <!-- AI Prompt -->
-            <div class="card">
-
-                <div class="card-icon">✦</div>
-
-                <span class="number">02</span>
-
-                <h3>AI Prompt</h3>
+                <h3>
+                    AI Chat
+                </h3>
 
                 <p>
-                    An interactive interface designed to help
-                    users create and explore AI prompts.
+                    A modern conversational AI interface with
+                    interactive chat, suggested prompts,
+                    typing indicators and responsive design.
                 </p>
 
-                <a href="ai-prompt/index.html">
-                    Open Interface →
+                <a
+                    href="./AI-Chat/index.html"
+                    target="_blank"
+                    class="project-link"
+                >
+                    Open AI Chat →
                 </a>
 
-            </div>
+            </article>
 
 
-            <!-- AI Search -->
-            <div class="card">
+            <!-- ================= AI SEARCH ================= -->
 
-                <div class="card-icon">⌕</div>
+            <article class="project-card">
 
-                <span class="number">03</span>
+                <div class="card-top">
 
-                <h3>AI Search</h3>
+                    <div class="icon">
+                        🔍
+                    </div>
+
+                    <span class="number">
+                        02
+                    </span>
+
+                </div>
+
+                <h3>
+                    AI Search
+                </h3>
 
                 <p>
-                    An AI-powered search interface designed
-                    for finding information quickly and easily.
+                    An intelligent search interface designed
+                    to help users discover information through
+                    an AI-powered experience.
                 </p>
 
-                <a href="ai-search/index.html">
-                    Open Interface →
+                <a
+                    href="./AI-search/index.html"
+                    target="_blank"
+                    class="project-link"
+                >
+                    Open AI Search →
                 </a>
 
-            </div>
+            </article>
 
 
-            <!-- AI Recommendation -->
-            <div class="card">
+            <!-- ================= AI PROMPT ================= -->
 
-                <div class="card-icon">✧</div>
+            <article class="project-card">
 
-                <span class="number">04</span>
+                <div class="card-top">
 
-                <h3>AI Recommendation</h3>
+                    <div class="icon">
+                        ✨
+                    </div>
+
+                    <span class="number">
+                        03
+                    </span>
+
+                </div>
+
+                <h3>
+                    AI Prompt
+                </h3>
 
                 <p>
-                    A recommendation interface that helps
-                    users discover personalized suggestions.
+                    An interactive prompt interface designed
+                    to help users create, explore and improve
+                    prompts for AI systems.
                 </p>
 
-                <a href="ai-recommendation/index.html">
-                    Open Interface →
+                <a
+                    href="./ai%20prompt/index.html"
+                    target="_blank"
+                    class="project-link"
+                >
+                    Open AI Prompt →
                 </a>
 
-            </div>
+            </article>
+
+
+            <!-- ================= AI RECOMMENDATION ================= -->
+
+            <article class="project-card">
+
+                <div class="card-top">
+
+                    <div class="icon">
+                        🤖
+                    </div>
+
+                    <span class="number">
+                        04
+                    </span>
+
+                </div>
+
+                <h3>
+                    AI Recommendation
+                </h3>
+
+                <p>
+                    A personalized recommendation interface
+                    that provides useful suggestions based
+                    on user requirements.
+                </p>
+
+                <a
+                    href="./ai%20recommendation/index.html"
+                    target="_blank"
+                    class="project-link"
+                >
+                    Open AI Recommendation →
+                </a>
+
+            </article>
+
 
         </div>
 
     </section>
 
 
-    <!-- About Section -->
+    <!-- ================= ABOUT ================= -->
+
     <section class="about" id="about">
 
-        <div>
+        <div class="about-heading">
 
-            <p class="tag">ABOUT THE PROJECT</p>
+            <p class="tag">
+                ABOUT THE PROJECT
+            </p>
 
-            <h2>One Collection.<br>Multiple AI Experiences.</h2>
+            <h2>
+                One Collection.
+                <br>
+                Four AI Experiences.
+            </h2>
 
         </div>
 
-        <div class="about-text">
+
+        <div class="about-content">
 
             <p>
-                AI Interface Collection is a group project that
-                showcases different user interfaces for interacting
-                with artificial intelligence.
+                AI Interface Collection is a collaborative project
+                that brings together different AI-inspired web
+                interfaces in one place.
             </p>
 
             <p>
-                Each interface focuses on a different AI experience,
-                while maintaining a modern, responsive and
-                user-friendly design.
+                Each member of the team developed a different
+                interface while using modern web technologies
+                and responsive design principles.
             </p>
 
-            <div class="technologies">
+
+            <div class="technology-list">
+
                 <span>HTML5</span>
                 <span>CSS3</span>
                 <span>JavaScript</span>
+                <span>Responsive Design</span>
+
             </div>
 
         </div>
@@ -206,7 +298,58 @@
     </section>
 
 
-    <!-- Footer -->
+    <!-- ================= TEAM ================= -->
+
+    <section class="team">
+
+        <div class="section-heading">
+
+            <p class="tag">
+                OUR TEAM
+            </p>
+
+            <h2>
+                Four Members.
+                <br>
+                One Project.
+            </h2>
+
+        </div>
+
+
+        <div class="team-grid">
+
+            <div class="team-member">
+                <span>01</span>
+                <h3>Parimala</h3>
+                <p>AI Chat</p>
+            </div>
+
+            <div class="team-member">
+                <span>02</span>
+                <h3>Manvitha</h3>
+                <p>AI Search</p>
+            </div>
+
+            <div class="team-member">
+                <span>03</span>
+                <h3>Varshini</h3>
+                <p>AI Prompt</p>
+            </div>
+
+            <div class="team-member">
+                <span>04</span>
+                <h3>Bhavana</h3>
+                <p>AI Recommendation</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
     <footer>
 
         <div class="footer-logo">
@@ -214,7 +357,7 @@
         </div>
 
         <p>
-            Designed & Developed by our team
+            Designed and developed by our team
         </p>
 
         <p class="copyright">
@@ -224,7 +367,6 @@
     </footer>
 
 
-    <script src="script.js"></script>
-
 </body>
+
 </html>
