@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova AI Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <div class="brand-icon">✦</div>
+                <span>Nova Search</span>
+            </div>
+
+            <button class="new-search" id="newSearch">+ New Search</button>
+
+            <div class="side-label">YOUR SEARCHES</div>
+            <div id="history" class="history">
+                <p class="empty-history">No recent searches</p>
+            </div>
+
+            <div class="sidebar-bottom">
+                <button id="themeToggle" class="theme-toggle">
+                    ☾ <span>Toggle theme</span>
+                </button>
+                <div class="profile">
+                    <div class="avatar">N</div>
+                    <div>
+                        <strong>Nova User</strong>
+                        <small>Personal workspace</small>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+                <span class="mobile-brand">✦ Nova Search</span>
+                <span class="ai-label"><span class="status-dot"></span> AI Search Demo</span>
+            </header>
+
+            <section class="content">
+                <div class="welcome" id="welcome">
+                    <div class="sparkle">✦</div>
+                    <p class="eyebrow">YOUR AI RESEARCH ASSISTANT</p>
+                    <h1>Explore anything.<br><span>Understand everything.</span></h1>
+                    <p class="subtitle">
+                        Ask a question and discover clear answers,
+                        useful sources, and new ideas.
+                    </p>
+
+                    <form class="search-box" id="searchForm">
+                        <span class="search-icon">⌕</span>
+                        <input id="searchInput" type="text" placeholder="Ask anything..." aria-label="Search question"
+                            autocomplete="off">
+                        <button type="submit" class="search-button">Search ↗</button>
+                    </form>
+
+                    <p class="suggestion-label">TRY ASKING</p>
+                    <div class="suggestions">
+                        <button class="suggestion">What is artificial intelligence?</button>
+                        <button class="suggestion">Explain Python programming</button>
+                        <button class="suggestion">How does machine learning work?</button>
+                        <button class="suggestion">Future of web development</button>
+                    </div>
+                </div>
+
+                <section class="results hidden" id="results" aria-live="polite">
+                    <p class="result-label">SEARCH RESULTS</p>
+                    <h2 id="question"></h2>
+
+                    <article class="answer-card">
+                        <div class="answer-heading">
+                            <div class="answer-icon">✦</div>
+                            <div>
+                                <strong>AI Overview</strong>
+                                <small>Illustrative demo response</small>
+                            </div>
+                        </div>
+                        <div id="answer" class="answer-text"></div>
+                    </article>
+
+                    <div class="sources-heading">
+                        <h3>Explore further</h3>
+                        <span>Suggested resources</span>
+                    </div>
+                    <div id="sources" class="source-grid"></div>
+
+                    <div class="follow-up">
+                        <p>Continue exploring</p>
+                        <div id="followUps" class="suggestions"></div>
+                    </div>
+                </section>
+
+                <div class="notice">
+                    ✦ This is a frontend demo. Answers and resources are examples,
+                    not live AI-generated search results.
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

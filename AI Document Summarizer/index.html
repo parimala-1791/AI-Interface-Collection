@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Document Summarizer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            AI <span>Document Summarizer</span>
+        </div>
+
+        <a href="../index.html" class="home-btn">
+            ← Home
+        </a>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="hero">
+
+            <p class="tag">SMART AI TOOL</p>
+
+            <h1>
+                Summarize your
+                <span>documents.</span>
+            </h1>
+
+            <p class="description">
+                Paste your document text and let AI create a short,
+                easy-to-understand summary.
+            </p>
+
+        </section>
+
+
+        <section class="summarizer">
+
+            <!-- INPUT SECTION -->
+
+            <div class="input-card">
+
+                <div class="card-header">
+                    <h2>📄 Your Document</h2>
+                </div>
+
+                <textarea
+                    id="documentText"
+                    placeholder="Paste your document or paragraph here..."
+                ></textarea>
+
+                <div class="input-info">
+                    <span id="wordCount">0 words</span>
+                    <button class="clear-btn" onclick="clearText()">
+                        Clear
+                    </button>
+                </div>
+
+                <button class="summarize-btn" onclick="summarizeDocument()">
+                    ✨ Summarize Document
+                </button>
+
+            </div>
+
+
+            <!-- OUTPUT SECTION -->
+
+            <div class="output-card">
+
+                <div class="card-header">
+                    <h2>🤖 AI Summary</h2>
+                </div>
+
+                <div id="summaryBox" class="summary-box">
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">✨</div>
+
+                        <h3>Your summary will appear here</h3>
+
+                        <p>
+                            Add some text and click
+                            "Summarize Document".
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div id="summaryInfo" class="summary-info hidden">
+
+                    <span id="summaryWords">
+                        0 words
+                    </span>
+
+                    <button onclick="copySummary()">
+                        📋 Copy Summary
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SAMPLE DOCUMENTS -->
+
+        <section class="examples">
+
+            <h2>Try a sample</h2>
+
+            <div class="example-buttons">
+
+                <button onclick="loadExample(1)">
+                    📚 Technology
+                </button>
+
+                <button onclick="loadExample(2)">
+                    🌱 Environment
+                </button>
+
+                <button onclick="loadExample(3)">
+                    🤖 Artificial Intelligence
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            AI Document Summarizer • AI Interface Collection
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
