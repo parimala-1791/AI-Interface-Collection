@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriAI - AI Food Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span>✦</span> NutriAI
+        </div>
+
+        <button class="new-plan" onclick="createPlan()">
+            + Create Meal Plan
+        </button>
+
+        <p class="menu-title">PLAN</p>
+
+        <button class="menu-item active" onclick="showSection('dashboard')">
+            🏠 Dashboard
+        </button>
+
+        <button class="menu-item" onclick="showSection('meals')">
+            🍽️ My Meals
+        </button>
+
+        <button class="menu-item" onclick="showSection('grocery')">
+            🛒 Grocery List
+        </button>
+
+        <button class="menu-item" onclick="showSection('favorites')">
+            ♡ Favorites
+        </button>
+
+        <p class="menu-title">PREFERENCES</p>
+
+        <button class="menu-item" onclick="showToast('Preferences opened')">
+            ⚙ Food Preferences
+        </button>
+
+        <button class="menu-item" onclick="showToast('Settings opened')">
+            ⚙ Settings
+        </button>
+
+        <div class="sidebar-bottom">
+            <div class="user-box">
+                <div class="avatar">B</div>
+                <div>
+                    <strong>My Profile</strong>
+                    <small>Personal plan</small>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- Main -->
+    <main class="main">
+
+        <!-- Header -->
+        <header class="header">
+
+            <div>
+                <h2>AI Food Planner</h2>
+                <p>Your personalized meal planning assistant</p>
+            </div>
+
+            <div class="header-right">
+                <button class="notification">🔔</button>
+                <div class="avatar">B</div>
+            </div>
+
+        </header>
+
+
+        <!-- Dashboard -->
+        <section id="dashboard" class="page-section">
+
+            <!-- Hero -->
+            <section class="hero">
+
+                <div class="hero-icon">✦</div>
+
+                <div>
+                    <p class="small-label">YOUR AI NUTRITION ASSISTANT</p>
+
+                    <h1>
+                        What would you like<br>
+                        to eat this week?
+                    </h1>
+
+                    <p class="hero-text">
+                        Tell me your preferences and I'll create a personalized
+                        meal plan that fits your lifestyle.
+                    </p>
+                </div>
+
+                <button class="generate-btn" onclick="generatePlan()">
+                    ✦ Generate My Meal Plan
+                </button>
+
+            </section>
+
+
+            <!-- Preferences -->
+            <section class="preferences">
+
+                <div class="section-title">
+                    <div>
+                        <h2>Plan preferences</h2>
+                        <p>Customize your meal plan</p>
+                    </div>
+                </div>
+
+                <div class="preference-grid">
+
+                    <div class="preference-card">
+                        <span>🥗</span>
+                        <label>Diet</label>
+
+                        <select id="diet">
+                            <option>Balanced</option>
+                            <option>Vegetarian</option>
+                            <option>Vegan</option>
+                            <option>High Protein</option>
+                        </select>
+                    </div>
+
+
+                    <div class="preference-card">
+                        <span>🔥</span>
+                        <label>Daily Calories</label>
+
+                        <select id="calories">
+                            <option>1500 kcal</option>
+                            <option selected>1800 kcal</option>
+                            <option>2000 kcal</option>
+                            <option>2200 kcal</option>
+                        </select>
+                    </div>
+
+
+                    <div class="preference-card">
+                        <span>🍴</span>
+                        <label>Meals per day</label>
+
+                        <select id="mealCount">
+                            <option>3 meals</option>
+                            <option selected>4 meals</option>
+                            <option>5 meals</option>
+                        </select>
+                    </div>
+
+
+                    <div class="preference-card">
+                        <span>⏱️</span>
+                        <label>Cooking time</label>
+
+                        <select id="cookingTime">
+                            <option>15 minutes</option>
+                            <option selected>30 minutes</option>
+                            <option>45 minutes</option>
+                            <option>1 hour</option>
+                        </select>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- AI Recommendation -->
+            <section class="ai-card">
+
+                <div class="ai-symbol">✦</div>
+
+                <div class="ai-content">
+
+                    <div class="ai-heading">
+                        <h3>AI Recommendation</h3>
+                        <span>PERSONALIZED</span>
+                    </div>
+
+                    <p id="aiMessage">
+                        Based on your balanced diet preference, I recommend
+                        including colorful vegetables, whole grains and a good
+                        source of protein in your meals.
+                    </p>
+
+                </div>
+
+                <button onclick="generatePlan()">
+                    Update plan →
+                </button>
+
+            </section>
+
+
+            <!-- Today's Meals -->
+            <section class="meals-section">
+
+                <div class="section-title">
+
+                    <div>
+                        <h2>Today's meals</h2>
+                        <p>Monday · Personalized for you</p>
+                    </div>
+
+                    <button class="view-button" onclick="showSection('meals')">
+                        View all →
+                    </button>
+
+                </div>
+
+
+                <div class="meal-grid">
+
+                    <!-- Breakfast -->
+                    <div class="meal-card">
+
+                        <div class="meal-image breakfast">
+                            🍳
+                        </div>
+
+                        <div class="meal-info">
+
+                            <span class="meal-type">BREAKFAST</span>
+
+                            <h3>Avocado Toast & Eggs</h3>
+
+                            <p>
+                                Whole grain toast, avocado and scrambled eggs
+                            </p>
+
+                            <div class="meal-bottom">
+                                <span>🔥 420 kcal</span>
+                                <span>⏱ 15 min</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Lunch -->
+                    <div class="meal-card">
+
+                        <div class="meal-image lunch">
+                            🥗
+                        </div>
+
+                        <div class="meal-info">
+
+                            <span class="meal-type">LUNCH</span>
+
+                            <h3>Grilled Chicken Bowl</h3>
+
+                            <p>
+                                Chicken, quinoa, greens and fresh vegetables
+                            </p>
+
+                            <div class="meal-bottom">
+                                <span>🔥 520 kcal</span>
+                                <span>⏱ 25 min</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Snack -->
+                    <div class="meal-card">
+
+                        <div class="meal-image snack">
+                            🥜
+                        </div>
+
+                        <div class="meal-info">
+
+                            <span class="meal-type">SNACK</span>
+
+                            <h3>Greek Yogurt & Berries</h3>
+
+                            <p>
+                                Creamy yogurt with fresh berries and nuts
+                            </p>
+
+                            <div class="meal-bottom">
+                                <span>🔥 220 kcal</span>
+                                <span>⏱ 5 min</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Dinner -->
+                    <div class="meal-card">
+
+                        <div class="meal-image dinner">
+                            🍲
+                        </div>
+
+                        <div class="meal-info">
+
+                            <span class="meal-type">DINNER</span>
+
+                            <h3>Vegetable Rice Bowl</h3>
+
+                            <p>
+                                Brown rice, vegetables and grilled tofu
+                            </p>
+
+                            <div class="meal-bottom">
+                                <span>🔥 510 kcal</span>
+                                <span>⏱ 30 min</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Grocery Preview -->
+            <section class="grocery-card">
+
+                <div>
+                    <span class="grocery-icon">🛒</span>
+                </div>
+
+                <div class="grocery-content">
+
+                    <h3>Your grocery list is ready</h3>
+
+                    <p>
+                        18 ingredients are needed for this week's meal plan.
+                    </p>
+
+                </div>
+
+                <button onclick="showSection('grocery')">
+                    View list →
+                </button>
+
+            </section>
+
+        </section>
+
+
+        <!-- Meals Page -->
+        <section id="meals" class="page-section hidden">
+
+            <div class="page-title">
+                <h1>My Meals</h1>
+                <p>Your personalized meal collection</p>
+            </div>
+
+            <div class="large-meal-grid">
+
+                <div class="large-meal">
+                    <div class="large-image">🥞</div>
+                    <div>
+                        <span>BREAKFAST</span>
+                        <h3>Banana Oat Pancakes</h3>
+                        <p>Oats, banana, milk and fresh berries.</p>
+                        <strong>380 kcal · 20 min</strong>
+                    </div>
+                </div>
+
+                <div class="large-meal">
+                    <div class="large-image">🍛</div>
+                    <div>
+                        <span>LUNCH</span>
+                        <h3>Vegetable Rice Bowl</h3>
+                        <p>Rice, vegetables, tofu and herbs.</p>
+                        <strong>480 kcal · 25 min</strong>
+                    </div>
+                </div>
+
+                <div class="large-meal">
+                    <div class="large-image">🥙</div>
+                    <div>
+                        <span>DINNER</span>
+                        <h3>Paneer Wrap</h3>
+                        <p>Paneer, vegetables and whole wheat wrap.</p>
+                        <strong>510 kcal · 30 min</strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Grocery Page -->
+        <section id="grocery" class="page-section hidden">
+
+            <div class="page-title">
+                <h1>Grocery List</h1>
+                <p>Ingredients generated from your meal plan</p>
+            </div>
+
+            <div class="grocery-list">
+
+                <label>
+                    <input type="checkbox">
+                    Whole grain bread
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Avocado
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Eggs
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Chicken breast
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Quinoa
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Greek yogurt
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Fresh berries
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Mixed vegetables
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Brown rice
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Tofu
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <!-- Favorites -->
+        <section id="favorites" class="page-section hidden">
+
+            <div class="page-title">
+                <h1>Favorite Meals</h1>
+                <p>Your saved meal ideas</p>
+            </div>
+
+            <div class="favorite-box">
+
+                <div>❤️</div>
+
+                <h2>Your favorite meals will appear here</h2>
+
+                <p>
+                    Save meals you love and quickly add them to your future
+                    meal plans.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- Toast -->
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
