@@ -4,86 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Code Assistant</title>
+    <title>AI Translator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
-        <div class="logo">⚡ CodeAI</div>
-
-        <div class="header-buttons">
-            <button id="clearBtn">New Chat</button>
-            <button id="themeBtn">🌙</button>
-        </div>
+        <h2>🌐 AI Translator</h2>
+        <button id="themeBtn">🌙</button>
     </header>
 
     <main>
 
         <section class="hero">
-            <h1>AI Code Assistant</h1>
-            <p>Write, explain, debug and improve your code with AI.</p>
+            <h1>AI Translator</h1>
+            <p>Translate text into different languages quickly and easily.</p>
         </section>
 
-        <section class="workspace">
+        <section class="translator-container">
 
-            <div class="input-card">
+            <div class="translator-box">
 
-                <h2>💻 Ask your coding question</h2>
+                <div class="box-header">
+                    <h3>Input Text</h3>
 
-                <select id="language">
-                    <option value="Python">Python</option>
-                    <option value="JavaScript">JavaScript</option>
-                    <option value="Java">Java</option>
-                    <option value="C">C</option>
-                    <option value="C++">C++</option>
-                </select>
-
-                <textarea id="codeInput"
-                    placeholder="Example: Write a Python program to find the largest number in a list..."></textarea>
-
-                <div class="actions">
-                    <button onclick="generateCode()">✨ Generate Code</button>
-                    <button onclick="explainCode()">📖 Explain</button>
-                    <button onclick="debugCode()">🐞 Debug</button>
+                    <select id="fromLanguage">
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="Telugu">Telugu</option>
+                        <option value="Tamil">Tamil</option>
+                        <option value="French">French</option>
+                        <option value="Spanish">Spanish</option>
+                    </select>
                 </div>
+
+                <textarea id="inputText" placeholder="Enter text here..."></textarea>
 
             </div>
 
-            <div class="output-card">
 
-                <div class="output-header">
-                    <h2>🤖 AI Response</h2>
-                    <button onclick="copyCode()">📋 Copy</button>
+            <button class="swap-btn" onclick="swapLanguages()">
+                ⇄
+            </button>
+
+
+            <div class="translator-box">
+
+                <div class="box-header">
+                    <h3>Translation</h3>
+
+                    <select id="toLanguage">
+                        <option value="Hindi">Hindi</option>
+                        <option value="English">English</option>
+                        <option value="Telugu">Telugu</option>
+                        <option value="Tamil">Tamil</option>
+                        <option value="French">French</option>
+                        <option value="Spanish">Spanish</option>
+                    </select>
                 </div>
 
-                <pre id="output">Your AI coding response will appear here...</pre>
+                <textarea id="outputText" placeholder="Translation will appear here..." readonly></textarea>
 
             </div>
 
         </section>
 
-        <section class="suggestions">
 
-            <h2>Try asking</h2>
+        <div class="button-area">
 
-            <div class="suggestion-grid">
+            <button onclick="translateText()" class="translate-btn">
+                ✨ Translate
+            </button>
 
-                <button onclick="setQuestion('Write a Python program to find the largest number in a list')">
-                    Find largest number in Python
+            <button onclick="clearText()">
+                Clear
+            </button>
+
+            <button onclick="copyTranslation()">
+                📋 Copy
+            </button>
+
+        </div>
+
+
+        <section class="examples">
+
+            <h2>Try Examples</h2>
+
+            <div class="example-buttons">
+
+                <button onclick="setExample('Hello')">
+                    Hello
                 </button>
 
-                <button onclick="setQuestion('Explain a for loop')">
-                    Explain a for loop
+                <button onclick="setExample('Good morning')">
+                    Good Morning
                 </button>
 
-                <button onclick="setQuestion('Find the error in my code')">
-                    Debug my code
+                <button onclick="setExample('Thank you')">
+                    Thank You
                 </button>
 
-                <button onclick="setQuestion('Write a function to reverse a string')">
-                    Reverse a string
+                <button onclick="setExample('How are you?')">
+                    How are you?
                 </button>
 
             </div>
@@ -92,9 +116,11 @@
 
     </main>
 
+
     <footer>
-        <p>AI Code Assistant • Hackathon UI Project</p>
+        AI Translator • AI Interface Collection
     </footer>
+
 
     <script src="script.js"></script>
 

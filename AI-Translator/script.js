@@ -1,113 +1,165 @@
 const inputText = document.getElementById("inputText");
 const outputText = document.getElementById("outputText");
 
+const fromLanguage = document.getElementById("fromLanguage");
+const toLanguage = document.getElementById("toLanguage");
+
+
+// Demo Translation Data
+
+const translations = {
+
+    "hello": {
+        "Hindi": "नमस्ते",
+        "Telugu": "హలో",
+        "Tamil": "வணக்கம்",
+        "French": "Bonjour",
+        "Spanish": "Hola"
+    },
+
+    "good morning": {
+        "Hindi": "सुप्रभात",
+        "Telugu": "శుభోదయం",
+        "Tamil": "காலை வணக்கம்",
+        "French": "Bonjour",
+        "Spanish": "Buenos días"
+    },
+
+    "thank you": {
+        "Hindi": "धन्यवाद",
+        "Telugu": "ధన్యవాదాలు",
+        "Tamil": "நன்றி",
+        "French": "Merci",
+        "Spanish": "Gracias"
+    },
+
+    "how are you?": {
+        "Hindi": "आप कैसे हैं?",
+        "Telugu": "మీరు ఎలా ఉన్నారు?",
+        "Tamil": "நீங்கள் எப்படி இருக்கிறீர்கள்?",
+        "French": "Comment allez-vous ?",
+        "Spanish": "¿Cómo estás?"
+    }
+
+};
+
+
+// Translate Function
+
 function translateText() {
 
-    const text = inputText.value.trim();
-
-    const from = document.getElementById("fromLanguage").value;
-    const to = document.getElementById("toLanguage").value;
+    let text = inputText.value.trim();
 
     if (text === "") {
-        outputText.value = "Please enter some text to translate.";
+        outputText.value = "Please enter text to translate.";
         return;
     }
+
+    let from = fromLanguage.value;
+    let to = toLanguage.value;
 
     if (from === to) {
         outputText.value = text;
         return;
     }
 
-    // Demo translations
+    let key = text.toLowerCase();
 
-    const translations = {
+    if (translations[key] && translations[key][to]) {
 
-        "Hello": {
-            "Hindi": "नमस्ते",
-            "Tamil": "வணக்கம்",
-            "Telugu": "హలో",
-            "French": "Bonjour",
-            "Spanish": "Hola"
-        },
-
-        "Good morning": {
-            "Hindi": "सुप्रभात",
-            "Tamil": "காலை வணக்கம்",
-            "Telugu": "శుభోదయం",
-            "French": "Bonjour",
-            "Spanish": "Buenos días"
-        },
-
-        "Thank you": {
-            "Hindi": "धन्यवाद",
-            "Tamil": "நன்றி",
-            "Telugu": "ధన్యవాదాలు",
-            "French": "Merci",
-            "Spanish": "Gracias"
-        },
-
-        "How are you?": {
-            "Hindi": "आप कैसे हैं?",
-            "Tamil": "நீங்கள் எப்படி இருக்கிறீர்கள்?",
-            "Telugu": "మీరు ఎలా ఉన్నారు?",
-            "French": "Comment allez-vous ?",
-            "Spanish": "¿Cómo estás?"
-        }
-
-    };
-
-    if (
-        translations[text] &&
-        translations[text][to]
-    ) {
-
-        outputText.value = translations[text][to];
+        outputText.value = translations[key][to];
 
     } else {
 
         outputText.value =
-            `AI Translation
+            `Demo Translation
 
 From: ${from}
 To: ${to}
 
-Original:
+Original Text:
 ${text}
 
-Demo translation generated.
+This is a frontend demo translator.
 
-For real-time AI translation, connect
-this interface to a translation API or
-AI model.`;
+Connect a translation API or AI model
+to translate any sentence automatically.`;
 
     }
 
 }
+
+
+// Swap Languages
 
 function swapLanguages() {
 
-    const from = document.getElementById("fromLanguage");
-    const to = document.getElementById("toLanguage");
+    let tempLanguage = fromLanguage.value;
 
-    const temp = from.value;
+    fromLanguage.value = toLanguage.value;
+    toLanguage.value = tempLanguage;
 
-    from.value = to.value;
-    to.value = temp;
 
-    const input = inputText.value;
+    let tempText = inputText.value;
 
     inputText.value = outputText.value;
-    outputText.value = input;
+    outputText.value = tempText;
+
 }
 
-document.getElementById("themeBtn").addEventListener("click", function () {
 
-    document.body.classList.toggle("dark");
+// Clear Text
 
-    if (document.body.classList.contains("dark")) {
-        this.textContent = "☀️";
-    } else {
-        this.textContent = "🌙";
+function clearText() {
+
+    inputText.value = "";
+    outputText.value = "";
+
+}
+
+
+// Copy Translation
+
+function copyTranslation() {
+
+    if (outputText.value === "") {
+
+        alert("No translation to copy.");
+
+        return;
     }
 
-});
+    navigator.clipboard.writeText(outputText.value);
+
+    alert("Translation copied!");
+
+}
+
+
+// Example Buttons
+
+function setExample(text) {
+
+    inputText.value = text;
+
+}
+
+
+// Dark Mode
+
+document.getElementById("themeBtn")
+    .addEventListener("click", function () {
+
+        document.body.classList.toggle("dark");
+
+        if (document.body.classList.contains("dark")) {
+
+            this.textContent = "☀️";
+
+        } else {
+
+            this.textContent = "🌙";
+
+        }
+
+    });
